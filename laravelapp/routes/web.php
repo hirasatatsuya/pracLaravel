@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\HelloController; 誤
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello/{id?}', 'App\Http\Controllers\HelloController@index'); 
+Route::get('hello', 'App\Http\Controllers\HelloController@index'); 
 // Route::get('hello', 'HelloController@index'); 誤
