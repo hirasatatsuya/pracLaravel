@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('hello', 'App\Http\Controllers\HelloController@index');
+
 Route::get('hello', [HelloController::class, 'index']);
 Route::post('hello', [HelloController::class, 'post']);
+
+Route::get('scss', function () {
+    return view('for-scss');
+});
 // Route::get('hello', 'HelloController@index'); 誤
