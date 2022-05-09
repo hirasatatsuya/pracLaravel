@@ -225,12 +225,54 @@
         </div>
 
         <div class="new_schedule">
-          <div class="button_wrap">
-            <a href="">新規作成</a>
-          </div>
+          <a href="{{ route('hello.create') }}">
+            <div class="button_wrap">新規作成</div>
+          </a>
         </div>
+
+        <section id="todo">
+          <ul>
+            <li class="item">
+              <h2 class="sche_name">人工知能第3回レポート</h2>
+              <a href="" class="btn show">詳細</a>
+              <a href="{{ route('hello.edit') }}" class="btn edit">編集</a>
+              <a href="" class="btn delete">削除</a>
+            </li>
+            <li class="item">
+              <h2 class="sche_name">人工知能第3回レポート</h2>
+              <a href="" class="btn show">詳細</a>
+              <a href="{{ route('hello.edit') }}" class="btn edit">編集</a>
+              <a href="" class="btn delete">削除</a>
+            </li>
+            <li class="item">
+              <h2 class="sche_name">人工知能第3回レポート</h2>
+              <a href="" class="btn show">詳細</a>
+              <a href="{{ route('hello.edit') }}" class="btn edit">編集</a>
+              <a href="" class="btn delete">削除</a>  
+            </li>
+            <li class="item">
+             <h2 class="sche_name">人工知能第3回レポート</h2>
+              <a href="" class="btn show">詳細</a>
+              <a href="{{ route('hello.edit') }}" class="btn edit">編集</a>
+              <form action="{{ route('hello.destroy') }}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="submit" class="btn delete" onclick="deletePost(this);" value="削除">
+              </form>
+            </li>
+          </ul>
+        </section>
       </div>
     </div>
   </section>
 </body>
+
+<script>
+    function deletePost(e) {
+      'use strict';
+      if(confirm('本当に削除していいですか?')){
+          document.getElementById('form_' + e.dataset.id).submit();
+      }
+    }
+  </script>
 </html>
