@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HelloController;
+use App\Http\Controllers\TasksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +19,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('hello', [HelloController::class, 'index'])->name('hello.index');
-// Route::post('hello', [HelloController::class, 'post']);
-Route::get('hello/create', [HelloController::class, 'create'])->name('hello.create');
-Route::post('hello/store', [HelloController::class, 'store'])->name('hello.store');
-Route::get('hello/edit', [HelloController::class, 'edit'])->name('hello.edit');
-Route::post('hello/update', [HelloController::class, 'update'])->name('hello.update');
-Route::delete('hello/destroy', [HelloController::class, 'destroy'])->name('hello.destroy');
+Route::get('home', [TasksController::class, 'ShowListWD'])->name('task.index');
+Route::get('task/create', [TasksController::class, 'ShowTaskRegisterWD'])->name('task.create');
+Route::post('task/store', [TasksController::class, 'TaskRegister'])->name('task.store');
+Route::get('task/show', [TasksController::class, 'ShowTaskWD'])->name('task.show'); 
+//後で作る必要あり show.blade.php
+Route::get('task/edit', [TasksController::class, 'ShowTaskEditWD'])->name('task.edit');
+Route::post('task/update', [TasksController::class, 'TaskEdit'])->name('task.update');
+Route::delete('task/destroy', [TasksController::class, 'destroy'])->name('task.destroy');
+
 Route::get('scss', function () {
     return view('for-scss');
 });
