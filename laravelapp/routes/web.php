@@ -23,7 +23,6 @@ Route::get('home', [TasksController::class, 'ShowListWD'])->name('task.index');
 Route::get('task/create', [TasksController::class, 'ShowTaskRegisterWD'])->name('task.create');
 Route::post('task/store', [TasksController::class, 'TaskRegister'])->name('task.store');
 Route::get('task/show', [TasksController::class, 'ShowTaskWD'])->name('task.show'); 
-//後で作る必要あり show.blade.php
 Route::get('task/edit', [TasksController::class, 'ShowTaskEditWD'])->name('task.edit');
 Route::post('task/update', [TasksController::class, 'TaskEdit'])->name('task.update');
 Route::delete('task/destroy', [TasksController::class, 'destroy'])->name('task.destroy');
